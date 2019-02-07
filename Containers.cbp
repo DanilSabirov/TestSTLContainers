@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Containers" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="include/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Containers" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Containers" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`wx-config --cflags`" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="ContainersApp.cpp" />
+		<Unit filename="ContainersApp.h" />
+		<Unit filename="ContainersMain.cpp" />
+		<Unit filename="ContainersMain.h" />
+		<Unit filename="include/Benchmark.h" />
+		<Unit filename="include/ContainerControl.h" />
+		<Unit filename="include/Data.h" />
+		<Unit filename="include/DequeControl.h" />
+		<Unit filename="include/ListControl.h" />
+		<Unit filename="include/VectorControl.h" />
+		<Unit filename="include/getCPUTime.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="include/" />
+		</Unit>
+		<Unit filename="src/Benchmark.cpp" />
+		<Unit filename="src/ContainerControl.cpp" />
+		<Unit filename="src/Data.cpp" />
+		<Unit filename="src/DequeControl.cpp" />
+		<Unit filename="src/ListControl.cpp" />
+		<Unit filename="src/VectorControl.cpp" />
+		<Unit filename="wxsmith/Containersdialog.wxs" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="ContainersApp.cpp" main="ContainersDialog" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxDialog wxs="wxsmith/Containersdialog.wxs" src="ContainersMain.cpp" hdr="ContainersMain.h" fwddecl="0" i18n="1" name="ContainersDialog" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
